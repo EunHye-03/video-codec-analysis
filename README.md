@@ -19,7 +19,6 @@
 
 ## 📂 Project Structure
 ```text
-.
 ├── src/                # 분석 및 실행 소스 코드
 ├── raw/                # 영상 데이터 (Git 제외)
 ├── results/            # 시각화 차트 및 분석 리포트
