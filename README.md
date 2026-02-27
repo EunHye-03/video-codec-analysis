@@ -77,6 +77,11 @@ python src/main.py
 
 ---
 
+# 🛠 Current Status
+Ongoing: Modularizing scripts and upgrading the automation workflow.
+
+---
+
 # 🤝 Contributing
 기여 방법은 [CONTRIBUTING.md](CONTRIBUTING.md)를 참고하세요.
 
