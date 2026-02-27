@@ -1,0 +1,81 @@
+import os
+
+# ==============================================================================
+# 1. 경로 설정 (Path Settings)
+# 사용자의 로컬 환경에 맞춰 "YOUR_PATH" 부분을 수정하세요.
+# ==============================================================================
+
+# 프로젝트 루트 기준 상대 경로 설정
+BASE_PATH = os.path.dirname(os.path.abspath(__file__))
+
+# 데이터 및 결과 저장 경로
+ROI_PATH = os.path.join(BASE_PATH, "raw/")
+OUTPUT_REPORT_DIR = os.path.join(BASE_PATH, "results/report/")
+OUTPUT_METADATA_DIR = OUTPUT_REPORT_DIR
+OUTPUT_ANALYSIS_DIR = OUTPUT_REPORT_DIR
+OUTPUT_COMPRESSED_DIR = os.path.join(BASE_PATH, "results/compressed/")
+OUTPUT_COMPRESSED_HEVC_DIR = os.path.join(OUTPUT_COMPRESSED_DIR, "HEVC")
+OUTPUT_COMPRESSED_VVC_DIR = os.path.join(OUTPUT_COMPRESSED_DIR, "VVC")
+OUTPUT_DECODED_DIR = os.path.join(BASE_PATH, "results/decoded/")
+OUTPUT_EVALUATE_DIR = os.path.join(BASE_PATH, "results/evaluate/")
+
+
+# VVC 소프트웨어 경로 (WSL2 또는 Linux 절대 경로 입력)
+# 예: "/home/username/VVCSoftware_VTM/bin/..."
+
+# VVC Decoder Path
+VVC_DECODER_APP_PATH = os.path.expanduser(
+    "path/to/your/VTM/bin/DecoderApp"
+)
+# VVC Encoder Path
+VVC_ENCODER_APP_PATH = os.path.expanduser(
+    "path/to/your/VTM/bin/EncoderApp"
+)
+VVC_CFG_PATH = os.path.expanduser("path/to/your/VTM/cfg/encoder_randomaccess_vtm.cfg")
+
+
+# ==============================================================================
+# 2. 파라미터 설정 (Parameter Settings)
+# ==============================================================================
+
+QP_LIST = [22, 27, 32, 37]  # 분석에 사용할 QP 리스트
+
+
+# ==============================================================================
+# 3. 매핑 데이터 (Mapping Data)
+# 데이터셋에 종속된 정보이므로 기본값을 유지합니다.
+# ==============================================================================
+
+# 원본 해상도 매핑: (width, height)
+RAW_RESOLUTIONS = {
+    "ILSVRC2015_val_00006001": (160, 90),
+    "ILSVRC2015_val_00041007": (160, 90),
+    "ILSVRC2015_val_00060001": (320, 180),
+    "ILSVRC2015_val_00075001": (120, 90),
+    "ILSVRC2015_val_00091000": (120, 90),
+    "ILSVRC2015_val_00139001": (320, 180),
+    "ILSVRC2015_val_00007027": (320, 180),
+    "ILSVRC2015_val_00007042": (320, 180),
+    "ILSVRC2015_val_00082001": (320, 180),
+    "ILSVRC2015_val_00112000": (120, 90),
+}
+
+# 4배 확대된 실제 처리 해상도 생성
+RESOLUTIONS = {k: (v[0] * 4, v[1] * 4) for k, v in RAW_RESOLUTIONS.items()}
+
+# 포맷 정보 (YUV 4:2:0 등)
+FORMATS = {"4:2:0": 1.5}
+
+# 프레임 정보: (intra_period, fps, frame_count, start_frame)
+FR_DICT = {
+    "ILSVRC2015_val_00006001": (32, 30, 120, 0),
+    "ILSVRC2015_val_00041007": (32, 30, 47, 0),
+    "ILSVRC2015_val_00060001": (32, 30, 140, 0),
+    "ILSVRC2015_val_00075001": (32, 30, 168, 0),
+    "ILSVRC2015_val_00091000": (32, 30, 180, 0),
+    "ILSVRC2015_val_00139001": (32, 30, 111, 0),
+    "ILSVRC2015_val_00007027": (32, 30, 155, 0),
+    "ILSVRC2015_val_00007042": (32, 30, 213, 0),
+    "ILSVRC2015_val_00082001": (32, 30, 350, 0),
+    "ILSVRC2015_val_00112000": (32, 30, 151, 0),
+}
