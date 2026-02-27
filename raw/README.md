@@ -3,11 +3,6 @@
 이 폴더는 영상 분석 및 압축에 사용되는 데이터셋을 관리합니다.
 보안 및 용량 문제로 실제 데이터는 Git에 포함되지 않습니다.
 
-## 📁 구조 (Directory Structure)
-- `raw/`: 원본 YUV 또는 MP4 영상 파일
-- `compressed/`: VTM 인코딩 결과물 (.bin, .hevc, .vvc, .mp4)
-- `decoded/`: VTM 디코딩 결과물 (.yuv)
-
 ## 📥 데이터셋 다운로드 가이드
 본 프로젝트는 **ILSVRC 2015 Object Detection from Video (VID)** 데이터셋의 일부를 활용합니다.
 
