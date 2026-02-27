@@ -1,4 +1,28 @@
 imagenet_vcm_onlyROI/
-*.yuv
 vcm_env/
-data/
+results/compressed/
+results/decoded/
+results/analysis
+results/report
+config.py
+
+# 영상 데이터 및 바이너리
+*.mp4
+*.yuv
+*.bin
+*.hevc
+*.vvc
+
+# result 데이터 관련
+*.csv
+*.png
+*.prof
+
+# VTM 관련 빌드 파일
+/VTM/bin/
+/VTM/lib/
+
+# 파이썬 환경 및 캐시
+__pycache__/
+.venv/
+.ipynb_checkpoints/
