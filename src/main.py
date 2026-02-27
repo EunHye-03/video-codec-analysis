@@ -3,8 +3,9 @@ from step1_check_resolution import run_check_resolution
 from step2_analyze_metrics import run_analyze_metrics
 from step3_1_compress_hevc import run_compress_hevc
 from step3_2_compress_vvc import run_compress_vvc
-from step4_decode import run_decode
-from step5_evaluate import run_evaluate
+from step3_3_decode import run_decode
+from step4_evaluate import run_evaluate
+from step5_eval_visualizer import run_visualize
 
 
 def main():
@@ -31,6 +32,10 @@ def main():
     print("🚀 평가 준비 중...")
     run_evaluate()
     print("🚀 평가 완료...")
+
+    print("🚀 시각화 준비 중...")
+    run_visualize()
+    print("🚀 시각화 완료...")
 
 
 if __name__ == "__main__":

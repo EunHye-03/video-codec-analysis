@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import config as cfg
 
 
-def plot_rd_curves():
+def run_visualize():
     # 1. 데이터 불러오기 (vcm/results/report/)
     hevc_path = os.path.join(cfg.OUTPUT_REPORT_DIR, "evaluation_HEVC.csv")
     vvc_path = os.path.join(cfg.OUTPUT_REPORT_DIR, "evaluation_VVC.csv")
@@ -81,4 +81,4 @@ def plot_rd_curves():
 
 
 if __name__ == "__main__":
-    plot_rd_curves()
+    run_visualize()
